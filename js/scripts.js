@@ -1,3 +1,6 @@
+//start the IIFE fucntion
+(function () {
+  
 //This object variable will contain the Pokemon "name", "height", and type
 let pokemonList = [
   {name: 'Metapod', type: 'Bug', height: 0.7}, 
@@ -6,7 +9,7 @@ let pokemonList = [
   {name: 'Pikachu', type: 'Electric', height: 0.4}
 ];
 
-//the "for" will start the loop, the "let i=0" will set loop to start from "0". The pokemonList.lengh wull go through the lengh of my PokemonList 
+//forEach is a pre defined function in JS. item => followed by a {} which indicates to start the function
 pokemonList.forEach(item => {  
   if (item.height > 0 && item.height < 0.4) {
       document.write('<h1>' + item.name + ' (height: ' + item.height + ') - This is a small Pokepmon!)</h1>') 
@@ -17,9 +20,8 @@ pokemonList.forEach(item => {
   }
 })
 
-
-
-
+//end the IIFE function
+})();
 
   
 
