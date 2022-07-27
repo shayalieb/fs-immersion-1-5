@@ -1,13 +1,16 @@
+//This object variable will contain the Pokemon "name", "height", and type
+
 //start the IIFE fucntion
 (function () {
-  
-//This object variable will contain the Pokemon "name", "height", and type
-let pokemonList = [
-  {name: 'Metapod', type: 'Bug', height: 0.7}, 
-  {name: 'Weedle', type: ['bug', 'Poison'], height: 0.3},
-  {name: 'Fearow', type: ['flying', 'normal'], height: 1.2},
-  {name: 'Pikachu', type: 'Electric', height: 0.4}
-];
+  let pokemonList = [
+    {name: 'Metapod', type: 'Bug', height: 0.7}, 
+    {name: 'Weedle', type: ['bug', 'Poison'], height: 0.3},
+    {name: 'Fearow', type: ['flying', 'normal'], height: 1.2},
+    {name: 'Pikachu', type: 'Electric', height: 0.4}
+  ];
+})();
+
+//end the IIFE function
 
 //forEach is a pre defined function in JS. item => followed by a {} which indicates to start the function
 pokemonList.forEach(item => {  
@@ -20,8 +23,22 @@ pokemonList.forEach(item => {
   }
 })
 
-//end the IIFE function
-})();
+//To pull the function using IIFE
+let pokemonRepository = (function () {
+  let  pokemonList = [];
 
-  
+  function add(pokemon) {
+    pokemonList.push(pokemon);
+  }
+
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  };
+})()
+
 
